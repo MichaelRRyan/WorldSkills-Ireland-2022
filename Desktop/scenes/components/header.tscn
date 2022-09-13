@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/logo_wsg_school.png" type="Texture" id=1]
+[ext_resource path="res://scripts/components/header.gd" type="Script" id=2]
+
+[node name="Header" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.2
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 220.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Title"
+align = 1
+valign = 1
