@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "DataRow",
 "language": "GDScript",
 "path": "res://scripts/components/data_row.gd"
+}, {
+"base": "Node",
+"class": "Person",
+"language": "GDScript",
+"path": "res://scripts/classes/person.gd"
 } ]
 _global_script_class_icons={
-"DataRow": ""
+"DataRow": "",
+"Person": ""
 }
 
 [application]

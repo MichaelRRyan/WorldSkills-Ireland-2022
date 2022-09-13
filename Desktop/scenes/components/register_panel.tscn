@@ -82,6 +82,7 @@ margin_right = 500.0
 margin_bottom = 250.0
 
 [node name="Register" type="Button" parent="."]
+unique_name_in_owner = true
 margin_top = 270.0
 margin_right = 500.0
 margin_bottom = 304.0

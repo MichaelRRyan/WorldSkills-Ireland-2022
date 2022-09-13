@@ -9,41 +9,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
 [node name="PanelsContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -248.0
-margin_top = -233.0
-margin_right = 248.0
-margin_bottom = 233.0
+margin_left = -300.0
+margin_top = -236.0
+margin_right = 300.0
+margin_bottom = 236.0
 alignment = 1
 
 [node name="Label" type="Label" parent="PanelsContainer"]
-margin_top = 192.0
-margin_right = 496.0
-margin_bottom = 220.0
+margin_top = 195.0
+margin_right = 600.0
+margin_bottom = 223.0
 text = "Authentication"
 align = 1
 
 [node name="OptionsContainer" type="HBoxContainer" parent="PanelsContainer"]
 unique_name_in_owner = true
-margin_top = 240.0
-margin_right = 496.0
-margin_bottom = 274.0
+margin_top = 243.0
+margin_right = 600.0
+margin_bottom = 277.0
 size_flags_horizontal = 3
 
 [node name="Login" type="Button" parent="PanelsContainer/OptionsContainer"]
-margin_right = 238.0
+margin_right = 290.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Login"
 
 [node name="Register" type="Button" parent="PanelsContainer/OptionsContainer"]
-margin_left = 258.0
-margin_right = 496.0
+margin_left = 310.0
+margin_right = 600.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -52,9 +56,9 @@ text = "Register"
 [node name="LoginPanel" parent="PanelsContainer" instance=ExtResource( 3 )]
 unique_name_in_owner = true
 visible = false
-margin_top = 48.0
-margin_right = 496.0
-margin_bottom = 466.0
+margin_top = 102.0
+margin_right = 600.0
+margin_bottom = 472.0
 
 [node name="RegisterPanel" parent="PanelsContainer" instance=ExtResource( 2 )]
 unique_name_in_owner = true

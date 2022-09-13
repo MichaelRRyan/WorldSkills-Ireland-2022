@@ -16,3 +16,13 @@ var role : int = Role.NONE
 
 
 #-------------------------------------------------------------------------------
+func create_user_data(http):
+	var user_document = { "role": { "integerValue": Role.NONE } }
+	Firebase.create_document("users?documentId=%s" % Firebase.user_info.id, user_document, http)
+
+
+#-------------------------------------------------------------------------------
+
+
+
+#-------------------------------------------------------------------------------
