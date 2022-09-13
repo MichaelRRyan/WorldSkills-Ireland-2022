@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/screens/registration_cert.gd" type="Script" id=1]
+[ext_resource path="res://scenes/components/header.tscn" type="PackedScene" id=2]
 
 [node name="RegistrationCert" type="Control"]
 anchor_right = 1.0
@@ -21,14 +22,7 @@ margin_top = -68.0
 margin_right = 253.0
 margin_bottom = 68.0
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 506.0
-margin_bottom = 28.0
-text = "Certificate"
-align = 1
-
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 48.0
 margin_right = 506.0
 margin_bottom = 136.0
 size_flags_horizontal = 3
@@ -36,7 +30,7 @@ size_flags_vertical = 3
 
 [node name="BackToData" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_right = 243.0
-margin_bottom = 88.0
+margin_bottom = 136.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Back to Data"
@@ -44,10 +38,13 @@ text = "Back to Data"
 [node name="DownloadCertificate" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 263.0
 margin_right = 506.0
-margin_bottom = 88.0
+margin_bottom = 136.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Download Certificate"
+
+[node name="Header" parent="." instance=ExtResource( 2 )]
+title_string = "Generate Certificate"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BackToData" to="." method="_on_BackToData_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/DownloadCertificate" to="." method="_on_DownloadCertificate_pressed"]

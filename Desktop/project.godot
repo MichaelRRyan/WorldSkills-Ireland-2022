@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="WorldSkills Global University"
 run/main_scene="res://scenes/screens/authentication.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/images/icon.png"
 
 [autoload]
 

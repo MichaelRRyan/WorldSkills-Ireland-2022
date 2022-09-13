@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/screens/authentication.gd" type="Script" id=1]
 [ext_resource path="res://scenes/components/register_panel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/components/login_panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/components/header.tscn" type="PackedScene" id=4]
 
 [node name="Authentication" type="Control"]
 anchor_right = 1.0
@@ -13,34 +14,30 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Header" parent="." instance=ExtResource( 4 )]
+title_string = "Authentication"
+
 [node name="PanelsContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -300.0
-margin_top = -236.0
+margin_top = -186.0
 margin_right = 300.0
-margin_bottom = 236.0
+margin_bottom = 291.0
 alignment = 1
-
-[node name="Label" type="Label" parent="PanelsContainer"]
-margin_top = 195.0
-margin_right = 600.0
-margin_bottom = 223.0
-text = "Authentication"
-align = 1
 
 [node name="OptionsContainer" type="HBoxContainer" parent="PanelsContainer"]
 unique_name_in_owner = true
-margin_top = 243.0
+margin_top = 214.0
 margin_right = 600.0
-margin_bottom = 277.0
+margin_bottom = 262.0
 size_flags_horizontal = 3
 
 [node name="Login" type="Button" parent="PanelsContainer/OptionsContainer"]
 margin_right = 290.0
-margin_bottom = 34.0
+margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Login"
@@ -48,7 +45,7 @@ text = "Login"
 [node name="Register" type="Button" parent="PanelsContainer/OptionsContainer"]
 margin_left = 310.0
 margin_right = 600.0
-margin_bottom = 34.0
+margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Register"
