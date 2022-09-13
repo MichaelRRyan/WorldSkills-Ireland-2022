@@ -8,14 +8,33 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Control",
+"class": "DataRow",
+"language": "GDScript",
+"path": "res://scripts/components/data_row.gd"
+} ]
+_global_script_class_icons={
+"DataRow": ""
+}
+
 [application]
 
 config/name="WorldSkills Global University"
+run/main_scene="res://scenes/screens/authentication.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+CurrentUser="*res://scripts/persistent/current_user.gd"
+Firebase="*res://scripts/persistent/firebase.gd"
+Secret="*res://scripts/persistent/secret.gd"
+ResponseCodes="*res://scripts/persistent/response_codes.gd"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://resources/themes/main_theme.tres"
 
 [physics]
 
