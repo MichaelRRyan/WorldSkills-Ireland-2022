@@ -1,31 +1,24 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { useContext } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import logo from "./logo.svg";
 import "./App.css";
-
-const Navigation = () => (
-  <div>
-    <Link to="/home">Home</Link>
-    <Outlet />
-  </div>
-);
-
-const Home = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-    </header>
-  </div>
-);
+import { UserContext } from "./contexts/user.context";
+import Authentication from "./routes/authentication/authentication.component";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
 
 function App() {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
-        <Route index element={<Home />} />
+        {currentUser ? (
+          <Route index element={<Home />} />
+        ) : (
+          <Route index element={<Authentication />} />
+        )}
+
         {/* <Route path="shop" element={<Shop />} />
         <Route path="auth" element={<Authentication />} /> */}
       </Route>
