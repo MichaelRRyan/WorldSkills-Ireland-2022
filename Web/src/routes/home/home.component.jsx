@@ -53,6 +53,14 @@ const Home = () => {
       ) : (
         <></>
       )}
+
+      {role === ADMIN ? (
+        <Link className="regular-button" to="/upload-data">
+          Upload Data
+        </Link>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

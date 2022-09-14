@@ -9,7 +9,14 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  addDoc,
+  collection,
+} from "firebase/firestore";
 import { firebaseConfig } from "./secret";
 
 // eslint-disable-next-line no-unused-vars
@@ -93,3 +100,18 @@ export const signOutUser = async () => signOut(auth);
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
+
+export const createDocument = async (path, data) => {
+  if (!path || !data) return;
+
+  const col = collection(db, path);
+
+  try {
+    const newDataRef = await addDoc(col, data);
+    return newDataRef;
+  } catch (error) {
+    console.error("Error creating the document", error.message);
+  }
+
+  return null;
+};
