@@ -1,18 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { signOutUser } from "../../utils/firebase/firebase.utils";
-
-import logo from "../../logo.svg";
+import "./home.styles.scss";
 
 const Home = () => (
-  <div className="App">
-    <button onClick={signOutUser}>Sign Out</button>
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-    </header>
+  <div className="home">
+    <Link className="regular-button" to="/student-info">
+      Student Info
+    </Link>
+    <Link className="regular-button" to="/class-summary">
+      Class Summary
+    </Link>
+    <Link className="regular-button" to="/subject-info">
+      Teacher Subject Info
+    </Link>
+    <Link className="regular-button" to="/external-results">
+      External Examiner Results
+    </Link>
   </div>
 );
 
