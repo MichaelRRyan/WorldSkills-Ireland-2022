@@ -5,6 +5,7 @@ import {
   createDocument,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
+import { Link } from "react-router-dom";
 
 const UploadData = () => {
   const changeHandler = (event) => {
@@ -58,6 +59,7 @@ const UploadData = () => {
         onChange={changeHandler}
         style={{ display: "block", margin: "10px auto" }}
       />
+      <Link to="/">Back</Link>
     </div>
   );
 };

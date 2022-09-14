@@ -1,7 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+
 import { UserContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import "./home.styles.scss";
 
@@ -21,6 +23,10 @@ const Home = () => {
       ) : (
         <></>
       )}
+
+      <p>
+        <button onClick={signOutUser}>Sign Out</button>
+      </p>
 
       {role === NONE ? (
         <p>

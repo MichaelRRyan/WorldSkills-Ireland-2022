@@ -1,13 +1,14 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-import { signOutUser } from "../../utils/firebase/firebase.utils";
+import header from "../../assets/images/Logo_WSG_School.PNG";
 
 const Navigation = () => (
-  <div>
-    <Link to="/">Home</Link>
-    <button onClick={signOutUser}>Sign Out</button>
+  <>
+    <header>
+      <img src={header} alt="" />
+    </header>
     <Outlet />
-  </div>
+  </>
 );
 
 export default Navigation;
