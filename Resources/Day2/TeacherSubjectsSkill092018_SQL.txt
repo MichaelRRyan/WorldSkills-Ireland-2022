@@ -1,0 +1,16 @@
+CREATE TABLE TeacherSubjectsSkill092018(
+   Teacher VARCHAR(7) NOT NULL PRIMARY KEY
+  ,Subject VARCHAR(27) NOT NULL
+);
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Hagen','Software_Development');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Hagen','Object_Oriented_Programming');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Allen','Formal_Languages');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Keane','Algorithm_Theory');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Keane','Numerical_Mathematics');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Keane','Mathematics_for_Programmers');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Murphy','Compiler_Constructions');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Byrne','Practical_Programming');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Mullen','Networking');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Mullen','IT_Security');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Smith','English');
+INSERT INTO TeacherSubjectsSkill092018(Teacher,Subject) VALUES ('Kingsly','Economy');
