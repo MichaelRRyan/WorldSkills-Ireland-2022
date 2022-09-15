@@ -3,32 +3,51 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <Button
-      title="Go to Jane's profile"
-      onPress={() => navigation.navigate("Profile", { name: "Jane" })}
-    />
-  );
-};
-
-const ProfileScreen = ({ navigation, route }) => {
-  return <Text>This is {route.params.name}'s profile</Text>;
-};
+import LandingScreen from "./screens/landing.screen";
+import TeacherDetailsScreen from "./screens/teacher-details.screen";
+import ExamDetailsScreen from "./screens/exam-details.screen";
+import ClassViewChoiceScreen from "./screens/class-view-choice.screen";
+import ClassroomViewScreen from "./screens/classroom-view.screen";
+import ClassListViewScreen from "./screens/class-list-view.screen";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="landing">
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: "Welcome" }}
+          name="landing"
+          component={LandingScreen}
+          options={{ title: "Launch Exam" }}
         />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen
+          name="teacher-details"
+          component={TeacherDetailsScreen}
+          options={{ title: "Teacher Details" }}
+        />
+        <Stack.Screen
+          name="exam-details"
+          component={ExamDetailsScreen}
+          options={{ title: "Exam Details" }}
+        />
+        <Stack.Screen
+          name="class-view-choice"
+          component={ClassViewChoiceScreen}
+          options={{ title: "Class View Choice" }}
+        />
+        <Stack.Screen
+          name="classroom-view"
+          component={ClassroomViewScreen}
+          options={{ title: "Classroom View" }}
+        />
+        <Stack.Screen
+          name="class-list-view"
+          component={ClassListViewScreen}
+          options={{ title: "Class List View" }}
+        />
       </Stack.Navigator>
+      <StatusBar />
     </NavigationContainer>
   );
 }
