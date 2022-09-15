@@ -23,10 +23,15 @@ const StudentCard = ({ item }) => {
 
   return (
     <View style={styles.container}>
-      <Text>Name:</Text>
-      <TextInput onChangeText={onNameTextChanged} placeholder="John Doe" />
-      <Text>Mark:</Text>
+      <Text style={styles.text}>Name:</Text>
       <TextInput
+        style={styles.text}
+        onChangeText={onNameTextChanged}
+        placeholder="John Doe"
+      />
+      <Text style={styles.text}>Mark:</Text>
+      <TextInput
+        style={styles.text}
         onChangeText={onMarkTextChanged}
         keyboardType="numeric"
         placeholder="3.5"
@@ -43,6 +48,9 @@ const styles = StyleSheet.create({
     padding: 5,
     textAlign: "center",
     backgroundColor: "rgb(255, 139, 0)",
+  },
+  text: {
+    color: "white",
   },
 });
 

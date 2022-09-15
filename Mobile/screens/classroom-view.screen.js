@@ -1,17 +1,38 @@
 import { useContext } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet,
-  FlatList,
-} from "react-native";
+import { View, Text, Button, StyleSheet, FlatList } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import StudentCard from "../components/student-card.component";
 import { ExamContext } from "../contexts/exam.context";
 
 const ClassroomViewScreen = ({ navigation }) => {
   const { currentExam } = useContext(ExamContext);
+
+  const onConcludeExam = async () => {
+    // Tries to retrieve previous exams.
+    var exams = [];
+
+    try {
+      const jsonValue = await AsyncStorage.getItem("exams");
+      if (jsonValue != null) {
+        exams = JSON.parse(jsonValue);
+      }
+    } catch (e) {
+      console.warn(e);
+    }
+
+    currentExam.timeStamp = new Date();
+    exams.push(currentExam);
+
+    try {
+      const jsonValue = JSON.stringify(exams);
+      await AsyncStorage.setItem("exams", jsonValue);
+    } catch (e) {
+      console.warn(e);
+    }
+
+    navigation.navigate("landing");
+  };
 
   return (
     <View style={styles.container}>
@@ -29,7 +50,7 @@ const ClassroomViewScreen = ({ navigation }) => {
       <Button
         title="Conclude Exam"
         color="rgb(255, 139, 0)"
-        onPress={() => navigation.navigate("landing")}
+        onPress={onConcludeExam}
       />
     </View>
   );

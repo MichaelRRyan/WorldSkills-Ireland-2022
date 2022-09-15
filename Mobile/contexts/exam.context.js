@@ -5,6 +5,7 @@ const exam = {
   subject: "",
   date: null,
   duration: null,
+  timeStamp: null,
   students: [
     { id: 0, name: "", mark: 0 },
     { id: 1, name: "", mark: 0 },
