@@ -4,21 +4,25 @@ import { ExamContext } from "../contexts/exam.context";
 
 const TeacherDetailsScreen = ({ navigation }) => {
   const [teacherName, setTeacherName] = useState("");
-  const { setCurrentExam } = useContext(ExamContext);
+  const { currentExam, setCurrentExam } = useContext(ExamContext);
 
   const onChangeTextHandler = (text) => {
     setTeacherName(text);
   };
 
   const onSubmitHandler = () => {
-    setCurrentExam({ teacherName });
+    setCurrentExam({ ...currentExam, teacherName });
     navigation.navigate("exam-details");
   };
 
   return (
     <View style={styles.container}>
       <Text>Please enter your name:</Text>
-      <TextInput placeholder="John Doe" onChangeText={onChangeTextHandler} />
+      <TextInput
+        value={teacherName}
+        placeholder="John Doe"
+        onChangeText={onChangeTextHandler}
+      />
       <Button
         title="Submit"
         color="rgb(255, 139, 0)"

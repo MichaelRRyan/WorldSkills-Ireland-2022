@@ -1,12 +1,6 @@
-import { useContext } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
-import { ExamContext } from "../contexts/exam.context";
+import { View, Button, StyleSheet } from "react-native";
 
 const ClassViewChoiceScreen = ({ navigation }) => {
-  const { currentExam } = useContext(ExamContext);
-
-  console.log(currentExam);
-
   return (
     <View style={styles.container}>
       <Button

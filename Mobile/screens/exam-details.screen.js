@@ -21,9 +21,9 @@ const ExamDetailsScreen = ({ navigation }) => {
     setDuration(selectedDate);
   };
 
-  const showMode = (onChange, currentMode) => {
+  const showMode = (value, onChange, currentMode) => {
     DateTimePickerAndroid.open({
-      value: date,
+      value,
       onChange,
       mode: currentMode,
       is24Hour: true,
@@ -31,15 +31,15 @@ const ExamDetailsScreen = ({ navigation }) => {
   };
 
   const showDatePicker = () => {
-    showMode(onChangeDate, "date");
+    showMode(date, onChangeDate, "date");
   };
 
   const showTimePicker = () => {
-    showMode(onChangeDate, "time");
+    showMode(date, onChangeDate, "time");
   };
 
   const showDurationPicker = () => {
-    showMode(onChangeDate, "time");
+    showMode(duration, onChangeDuration, "time");
   };
 
   const onSubmit = () => {
@@ -59,7 +59,8 @@ const ExamDetailsScreen = ({ navigation }) => {
       <View>
         <Text>Subject:</Text>
         <TextInput
-          onTextChanged={onSubjectTextChanged}
+          value={subject}
+          onChangeText={onSubjectTextChanged}
           placeholder="Economics"
         />
 
