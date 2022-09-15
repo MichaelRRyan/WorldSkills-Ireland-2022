@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { ExamContext } from "../contexts/exam.context";
 
 const TeacherDetailsScreen = ({ navigation }) => {
@@ -16,12 +16,23 @@ const TeacherDetailsScreen = ({ navigation }) => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Please enter your name:</Text>
       <TextInput placeholder="John Doe" onChangeText={onChangeTextHandler} />
-      <Button title="Submit" onPress={onSubmitHandler} />
+      <Button
+        title="Submit"
+        color="rgb(255, 139, 0)"
+        onPress={onSubmitHandler}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "rgb(255, 210, 0)",
+    flex: 1,
+  },
+});
 
 export default TeacherDetailsScreen;

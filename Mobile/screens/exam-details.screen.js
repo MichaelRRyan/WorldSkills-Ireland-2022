@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { ExamContext } from "../contexts/exam.context";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 
@@ -53,7 +53,7 @@ const ExamDetailsScreen = ({ navigation }) => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Please enter the exam details:</Text>
 
       <View>
@@ -64,21 +64,37 @@ const ExamDetailsScreen = ({ navigation }) => {
         />
 
         <Text>Start Date:</Text>
-        <Button onPress={showDatePicker} title={date.toLocaleDateString()} />
+        <Button
+          title={date.toLocaleDateString()}
+          color="rgb(255, 139, 0)"
+          onPress={showDatePicker}
+        />
 
         <Text>Start Time:</Text>
-        <Button onPress={showTimePicker} title={date.toLocaleTimeString()} />
+        <Button
+          title={date.toLocaleTimeString()}
+          color="rgb(255, 139, 0)"
+          onPress={showTimePicker}
+        />
 
         <Text>Duration:</Text>
         <Button
-          onPress={showDurationPicker}
           title={duration.toLocaleTimeString()}
+          color="rgb(255, 139, 0)"
+          onPress={showDurationPicker}
         />
       </View>
 
-      <Button title="Submit" onPress={onSubmit} />
+      <Button title="Submit" color="rgb(255, 139, 0)" onPress={onSubmit} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "rgb(255, 210, 0)",
+    flex: 1,
+  },
+});
 
 export default ExamDetailsScreen;
